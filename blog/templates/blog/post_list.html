@@ -6,8 +6,8 @@
     <div>
         <h1><a href="/">Blog Django Girls (por  adelinocpp)</a></h1>
     </div>
-
-    <div>
+    <hr>
+    <!-- <div>
         <p>publicado: 09.12.2022 16:54 </p>
         <h2><a href="">Post 1</a></h2>
         <p>Brasil fora. (Croácia 4 x 2 Brasil nos penaltis). </p>
@@ -17,6 +17,14 @@
         <p>publicado: 09.12.2022, 16:54</p>
         <h2><a href="">Post II</a></h2>
         <p>Argentina 1 x 0 Holanda.</p>
+    </div> -->
+    {% for post in posts %}
+    <div>
+        <p>Publicado em: {{ post.published_date }}</p>
+        <h4>Título: <a href="">{{ post.title }}</a></h4>
+        <p>Conteúdo: {{ post.text|linebreaksbr }}</p>
     </div>
+    <hr>
+{% endfor %}
 </body>
 </html>
